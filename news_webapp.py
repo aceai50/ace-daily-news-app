@@ -162,7 +162,12 @@ if st.button("Run"):
         yesterday = (datetime.today() - timedelta(days=1)).strftime('%Y-%m-%d')
         # Fetch articles sorted by relevancy
         articles_relevant = newsapi.get_everything(
-            q='Tech',
+            q=(
+                "tech OR AI OR software OR artificial intelligence OR "
+                "machine learning OR programming OR coding OR software development OR "
+                "web development OR app development OR blockchain OR cybersecurity OR "
+                "cloud computing OR Python OR Java OR JavaScript OR DevOps OR open source"
+                ),
             from_param=yesterday,
             to=today,
             language='en',
