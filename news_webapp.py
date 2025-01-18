@@ -8,7 +8,7 @@ import streamlit as st
 
 load_dotenv()
 
-api_key = "509a71a84ab34aeba02b8789d19ce213"
+api_key = os.getenv('api_key')
 newsapi = NewsApiClient(api_key=api_key)
 
 st.title("Apollo: News App")
