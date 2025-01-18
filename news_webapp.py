@@ -127,14 +127,9 @@ if st.button("Run"):
 
     try:
         tech_top_headlines = newsapi.get_top_headlines(
-            q= (
-                "tech OR AI OR artificial intelligence OR software OR programming OR coding OR machine learning OR deep learning OR "
-                "data science OR web development OR app development OR blockchain OR cryptocurrency OR cybersecurity OR cloud computing OR "
-                "IoT OR automation OR Python OR Java OR JavaScript OR React OR Angular OR Node OR DevOps OR Kubernetes OR Docker OR Git OR "
-                "API OR REST OR SQL OR MongoDB OR Firebase OR agile OR SaaS OR GPT OR ChatGPT OR VR OR AR OR startups OR innovation"
-                ),
+            q= "",
             #sources="the-hindu",
-            #category='business',  # Remove if using 'sources'
+            category='technology',  # Remove if using 'sources'
             language='en',
             #country='us',  # Remove if using 'sources'
             page=1
