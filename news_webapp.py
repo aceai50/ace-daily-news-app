@@ -128,15 +128,10 @@ if st.button("Run"):
     try:
         tech_top_headlines = newsapi.get_top_headlines(
             q= (
-                "tech OR AI OR artificial intelligence OR software OR programming OR coding OR machine learning OR "
-                "deep learning OR data science OR web development OR app development OR mobile development OR frontend OR "
-                "backend OR full stack OR blockchain OR cryptocurrency OR cybersecurity OR ethical hacking OR penetration testing OR "
-                "cloud computing OR big data OR IoT OR Internet of Things OR automation OR robotics OR Python OR Java OR JavaScript OR "
-                "TypeScript OR C++ OR C# OR Ruby OR Go OR Swift OR Kotlin OR PHP OR HTML OR CSS OR React OR Angular OR Vue OR Django OR "
-                "Flask OR Spring OR Node OR Express OR DevOps OR CI/CD OR Jenkins OR Kubernetes OR Docker OR Git OR GitHub OR open source OR "
-                "Linux OR API OR REST OR GraphQL OR database OR SQL OR NoSQL OR MongoDB OR Firebase OR PostgreSQL OR MySQL OR agile OR scrum OR "
-                "SaaS OR PaaS OR microservices OR virtualization OR AI models OR GPT OR ChatGPT OR natural language processing OR VR OR virtual reality OR "
-                "AR OR augmented reality OR quantum computing OR innovation OR tech news OR tech trends OR startups OR venture capital"
+                "tech OR AI OR artificial intelligence OR software OR programming OR coding OR machine learning OR deep learning OR "
+                "data science OR web development OR app development OR blockchain OR cryptocurrency OR cybersecurity OR cloud computing OR "
+                "IoT OR automation OR Python OR Java OR JavaScript OR React OR Angular OR Node OR DevOps OR Kubernetes OR Docker OR Git OR "
+                "API OR REST OR SQL OR MongoDB OR Firebase OR agile OR SaaS OR GPT OR ChatGPT OR VR OR AR OR startups OR innovation"
                 ),
             #sources="the-hindu",
             #category='business',  # Remove if using 'sources'
@@ -173,15 +168,10 @@ if st.button("Run"):
         # Fetch articles sorted by relevancy
         articles_relevant = newsapi.get_everything(
             q= (
-                "tech OR AI OR artificial intelligence OR software OR programming OR coding OR machine learning OR "
-                "deep learning OR data science OR web development OR app development OR mobile development OR frontend OR "
-                "backend OR full stack OR blockchain OR cryptocurrency OR cybersecurity OR ethical hacking OR penetration testing OR "
-                "cloud computing OR big data OR IoT OR Internet of Things OR automation OR robotics OR Python OR Java OR JavaScript OR "
-                "TypeScript OR C++ OR C# OR Ruby OR Go OR Swift OR Kotlin OR PHP OR HTML OR CSS OR React OR Angular OR Vue OR Django OR "
-                "Flask OR Spring OR Node OR Express OR DevOps OR CI/CD OR Jenkins OR Kubernetes OR Docker OR Git OR GitHub OR open source OR "
-                "Linux OR API OR REST OR GraphQL OR database OR SQL OR NoSQL OR MongoDB OR Firebase OR PostgreSQL OR MySQL OR agile OR scrum OR "
-                "SaaS OR PaaS OR microservices OR virtualization OR AI models OR GPT OR ChatGPT OR natural language processing OR VR OR virtual reality OR "
-                "AR OR augmented reality OR quantum computing OR innovation OR tech news OR tech trends OR startups OR venture capital"
+                "tech OR AI OR artificial intelligence OR software OR programming OR coding OR machine learning OR deep learning OR "
+                "data science OR web development OR app development OR blockchain OR cryptocurrency OR cybersecurity OR cloud computing OR "
+                "IoT OR automation OR Python OR Java OR JavaScript OR React OR Angular OR Node OR DevOps OR Kubernetes OR Docker OR Git OR "
+                "API OR REST OR SQL OR MongoDB OR Firebase OR agile OR SaaS OR GPT OR ChatGPT OR VR OR AR OR startups OR innovation"
                 ),
             from_param=yesterday,
             to=today,
