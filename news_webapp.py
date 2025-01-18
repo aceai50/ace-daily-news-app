@@ -220,11 +220,10 @@ if st.button("Run"):
         # Fetch articles sorted by relevancy
         articles_relevant = newsapi.get_everything(
             q=(
-                "tech OR technology OR AI OR artificial intelligence OR machine learning OR coding OR programming OR hackathons OR "
-                "coding competitions OR hiring OR tech jobs OR IT jobs OR software jobs OR internships OR fresher jobs OR tech careers OR "
-                "tech bootcamps OR job fairs OR career fairs OR developer conferences OR tech meetups OR tech summits OR startups OR Indian startups OR "
-                "Make in India OR Digital India OR innovation in India OR IIT hackathons OR NIT hackathons OR Indian IT sector OR IT companies OR "
-                "TCS OR Infosys OR Wipro OR HCL OR Cognizant OR Bangalore OR Hyderabad OR Chennai OR Pune OR Delhi OR Mumbai"
+                "tech OR technology OR AI OR machine learning OR coding OR hackathons OR coding competitions OR hiring OR tech jobs OR "
+                "IT jobs OR software jobs OR internships OR fresher jobs OR tech careers OR job fairs OR career fairs OR developer conferences OR "
+                "tech meetups OR tech summits OR startups OR Indian startups OR Make in India OR Digital India OR innovation in India OR "
+                "IIT hackathons OR NIT hackathons OR TCS OR Infosys OR Wipro OR Bangalore OR Hyderabad OR Chennai"
                 ),
             from_param=yesterday,
             to=today,
