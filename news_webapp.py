@@ -127,7 +127,28 @@ if st.button("Run"):
 
     try:
         tech_top_headlines = newsapi.get_top_headlines(
-            q='Tech OR Software',
+            q= (
+                "tech OR technology OR AI OR artificial intelligence OR software OR programming OR coding OR machine learning OR deep learning OR "
+                "neural networks OR natural language processing OR NLP OR computer vision OR AI models OR GPT OR ChatGPT OR data science OR "
+                "web development OR app development OR mobile development OR frontend OR backend OR full stack OR blockchain OR cryptocurrency OR "
+                "bitcoin OR ethereum OR NFTs OR cybersecurity OR ethical hacking OR penetration testing OR cloud computing OR big data OR IoT OR "
+                "Internet of Things OR automation OR robotics OR RPA OR AI automation OR digital transformation OR quantum computing OR VR OR "
+                "virtual reality OR AR OR augmented reality OR mixed reality OR innovation OR startups OR venture capital OR tech trends OR tech news OR "
+                "SaaS OR PaaS OR microservices OR virtualization OR edge computing OR AI ethics OR tech policy OR open source OR Linux OR DevOps OR CI/CD OR Jenkins "
+                "OR Kubernetes OR Docker OR Git OR GitHub OR GitLab OR agile OR scrum OR kanban OR software engineering OR software testing OR test automation OR "
+                "Selenium OR Cypress OR QA OR bug tracking OR Jira OR Trello OR database OR SQL OR NoSQL OR MongoDB OR Firebase OR PostgreSQL OR MySQL OR MariaDB OR "
+                "CockroachDB OR Cassandra OR Redis OR Elasticsearch OR Databricks OR Snowflake OR Hadoop OR Spark OR TensorFlow OR PyTorch OR Scikit-learn OR Keras OR "
+                "LangChain OR OpenAI OR Hugging Face OR LlamaIndex OR APIs OR REST OR GraphQL OR SOAP OR JSON OR XML OR React OR Angular OR Vue OR Svelte OR Django OR Flask "
+                "OR Spring Boot OR Laravel OR Ruby on Rails OR Express OR Node OR FastAPI OR TypeScript OR JavaScript OR Python OR Java OR C++ OR C# OR Rust OR Go OR Swift OR "
+                "Kotlin OR PHP OR HTML OR CSS OR Tailwind OR Bootstrap OR WebAssembly OR WASM OR Deno OR Vercel OR Netlify OR AWS OR Azure OR Google Cloud OR Heroku OR DigitalOcean OR "
+                "OpenStack OR Ansible OR Terraform OR Prometheus OR Grafana OR cloud-native OR hybrid cloud OR edge AI OR federated learning OR tech careers OR programming bootcamps "
+                "OR hackathons OR innovation hubs OR code challenges OR algorithms OR data structures OR competitive programming OR design patterns OR software architecture OR UML OR "
+                "domain-driven design OR system design OR performance optimization OR low-code OR no-code OR mobile-first OR responsive design OR user experience OR UI/UX OR accessibility OR "
+                "progressive web apps OR PWAs OR software licensing OR DevSecOps OR compliance OR GDPR OR data privacy OR digital security OR encryption OR cryptography OR blockchain security "
+                "OR AI governance OR explainable AI OR responsible AI OR ethical AI OR inclusive design OR localization OR internationalization OR wearable tech OR smart devices OR connected devices OR "
+                "tech education OR online learning OR coding tutorials OR interactive programming OR pair programming OR mob programming OR software consulting OR freelance development OR outsourcing OR "
+                "managed services OR tech forums OR community development OR Stack Overflow OR Reddit OR tech blogs OR Medium OR Substack"
+                ),
             #sources="the-hindu",
             #category='business',  # Remove if using 'sources'
             language='en',
@@ -162,11 +183,27 @@ if st.button("Run"):
         yesterday = (datetime.today() - timedelta(days=1)).strftime('%Y-%m-%d')
         # Fetch articles sorted by relevancy
         articles_relevant = newsapi.get_everything(
-            q=(
-                "tech OR AI OR software OR artificial intelligence OR "
-                "machine learning OR programming OR coding OR software development OR "
-                "web development OR app development OR blockchain OR cybersecurity OR "
-                "cloud computing OR Python OR Java OR JavaScript OR DevOps OR open source"
+            q= (
+                "tech OR technology OR AI OR artificial intelligence OR software OR programming OR coding OR machine learning OR deep learning OR "
+                "neural networks OR natural language processing OR NLP OR computer vision OR AI models OR GPT OR ChatGPT OR data science OR "
+                "web development OR app development OR mobile development OR frontend OR backend OR full stack OR blockchain OR cryptocurrency OR "
+                "bitcoin OR ethereum OR NFTs OR cybersecurity OR ethical hacking OR penetration testing OR cloud computing OR big data OR IoT OR "
+                "Internet of Things OR automation OR robotics OR RPA OR AI automation OR digital transformation OR quantum computing OR VR OR "
+                "virtual reality OR AR OR augmented reality OR mixed reality OR innovation OR startups OR venture capital OR tech trends OR tech news OR "
+                "SaaS OR PaaS OR microservices OR virtualization OR edge computing OR AI ethics OR tech policy OR open source OR Linux OR DevOps OR CI/CD OR Jenkins "
+                "OR Kubernetes OR Docker OR Git OR GitHub OR GitLab OR agile OR scrum OR kanban OR software engineering OR software testing OR test automation OR "
+                "Selenium OR Cypress OR QA OR bug tracking OR Jira OR Trello OR database OR SQL OR NoSQL OR MongoDB OR Firebase OR PostgreSQL OR MySQL OR MariaDB OR "
+                "CockroachDB OR Cassandra OR Redis OR Elasticsearch OR Databricks OR Snowflake OR Hadoop OR Spark OR TensorFlow OR PyTorch OR Scikit-learn OR Keras OR "
+                "LangChain OR OpenAI OR Hugging Face OR LlamaIndex OR APIs OR REST OR GraphQL OR SOAP OR JSON OR XML OR React OR Angular OR Vue OR Svelte OR Django OR Flask "
+                "OR Spring Boot OR Laravel OR Ruby on Rails OR Express OR Node OR FastAPI OR TypeScript OR JavaScript OR Python OR Java OR C++ OR C# OR Rust OR Go OR Swift OR "
+                "Kotlin OR PHP OR HTML OR CSS OR Tailwind OR Bootstrap OR WebAssembly OR WASM OR Deno OR Vercel OR Netlify OR AWS OR Azure OR Google Cloud OR Heroku OR DigitalOcean OR "
+                "OpenStack OR Ansible OR Terraform OR Prometheus OR Grafana OR cloud-native OR hybrid cloud OR edge AI OR federated learning OR tech careers OR programming bootcamps "
+                "OR hackathons OR innovation hubs OR code challenges OR algorithms OR data structures OR competitive programming OR design patterns OR software architecture OR UML OR "
+                "domain-driven design OR system design OR performance optimization OR low-code OR no-code OR mobile-first OR responsive design OR user experience OR UI/UX OR accessibility OR "
+                "progressive web apps OR PWAs OR software licensing OR DevSecOps OR compliance OR GDPR OR data privacy OR digital security OR encryption OR cryptography OR blockchain security "
+                "OR AI governance OR explainable AI OR responsible AI OR ethical AI OR inclusive design OR localization OR internationalization OR wearable tech OR smart devices OR connected devices OR "
+                "tech education OR online learning OR coding tutorials OR interactive programming OR pair programming OR mob programming OR software consulting OR freelance development OR outsourcing OR "
+                "managed services OR tech forums OR community development OR Stack Overflow OR Reddit OR tech blogs OR Medium OR Substack"
                 ),
             from_param=yesterday,
             to=today,
@@ -219,7 +256,18 @@ if st.button("Run"):
         yesterday = (datetime.today() - timedelta(days=1)).strftime('%Y-%m-%d')
         # Fetch articles sorted by relevancy
         articles_relevant = newsapi.get_everything(
-            q='Hiring OR hackathon OR tech events',
+            q=(
+                "tech OR technology OR AI OR artificial intelligence OR machine learning OR data science OR programming OR coding OR hackathons OR "
+                "code challenges OR coding competitions OR hiring OR tech hiring OR tech jobs OR job openings OR IT jobs OR tech recruitment OR "
+                "software jobs OR software engineers OR developer jobs OR software hiring OR internships OR fresher jobs OR tech careers OR tech bootcamps OR "
+                "tech training OR tech workshops OR webinars OR seminars OR innovation hubs OR tech fairs OR job fairs OR career fairs OR startup fairs OR "
+                "startup events OR tech expos OR technology expos OR industry events OR developer conferences OR tech conferences OR tech meetups OR tech summits OR "
+                "IT summits OR hackathons in India OR coding competitions in India OR hiring in India OR tech jobs in India OR IT jobs in India OR software jobs in India OR "
+                "startups in India OR Indian startups OR Make in India OR Digital India OR IndiaStack OR tech hubs in India OR Bangalore tech OR Hyderabad tech OR "
+                "Chennai tech OR Pune tech OR Delhi tech OR Mumbai tech OR NCR tech OR innovation in India OR tech parks in India OR Indian IT sector OR IT companies in India OR "
+                "TCS OR Infosys OR Wipro OR HCL OR Cognizant OR tech trends in India OR Indian coding culture OR coding bootcamps in India OR coding schools in India OR "
+                "NASSCOM OR Indian innovation OR IIT hackathons OR NIT hackathons OR Indian engineering colleges OR Indian developers OR Indian programmers"
+                ),
             from_param=yesterday,
             to=today,
             language='en',
