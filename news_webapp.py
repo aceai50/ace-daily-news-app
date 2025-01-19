@@ -8,7 +8,7 @@ import streamlit as st
 
 load_dotenv()
 
-api_key = "f917b824657a47c19af28b6d78d3df3c"
+api_key = "509a71a84ab34aeba02b8789d19ce213"
 newsapi = NewsApiClient(api_key=api_key)
 
 st.title("Apollo: News App")
@@ -41,6 +41,24 @@ if search:
             all_headlines_list = searched["articles"][i]
             with st.container():
                 st.write(f"{i+1}. {all_headlines_list['title']} - {all_headlines_list['source']}")
+
+                #published date
+                published_at = all_headlines_list.get("publishedAt", "No Date")  # Extract the date
+    
+                # Format the date if it exists
+                if published_at != "No Date":
+                    # Parse the ISO 8601 date string
+                    date_obj = datetime.fromisoformat(published_at.replace("Z", "+00:00"))  # Handle 'Z' as UTC
+                    formatted_date = date_obj.strftime("%d-%m-%y %H:%M:%S")  # Format to your desired format
+                    st.write(f"Published at: {formatted_date}")
+                else:
+                    formatted_date = "No Date Available"
+
+
+                url_to_image = all_headlines_list.get("urlToImage")
+                if url_to_image:  # Check if the image URL exists and is not None
+                    st.image(url_to_image, caption="Image", use_column_width=True)
+
                 st.write(f"Description: {all_headlines_list['description']}")
                 st.markdown("---")  # Horizontal separator between boxes
         else: break
@@ -84,6 +102,24 @@ if search_2:
             all_headlines_list = searched_2["articles"][i]
             with st.container():
                 st.write(f"{i+1}. {all_headlines_list['title']} - {all_headlines_list['source']}")
+
+                #published date
+                published_at = all_headlines_list.get("publishedAt", "No Date")  # Extract the date
+    
+                # Format the date if it exists
+                if published_at != "No Date":
+                    # Parse the ISO 8601 date string
+                    date_obj = datetime.fromisoformat(published_at.replace("Z", "+00:00"))  # Handle 'Z' as UTC
+                    formatted_date = date_obj.strftime("%d-%m-%y %H:%M:%S")  # Format to your desired format
+                    st.write(f"Published at: {formatted_date}")
+                else:
+                    formatted_date = "No Date Available"
+
+
+                url_to_image = all_headlines_list.get("urlToImage")
+                if url_to_image:  # Check if the image URL exists and is not None
+                    st.image(url_to_image, caption="Image", use_column_width=True)
+
                 st.write(f"Description: {all_headlines_list['description']}")
                 st.markdown("---")  # Horizontal separator between boxes
         else: break
@@ -117,6 +153,25 @@ if st.button("Run"):
             all_headlines_list = top_headlines["articles"][i]
             with st.container():
                 st.write(f"{i+1}. {all_headlines_list['title']} - {all_headlines_list['source']}")
+
+                #published date
+                published_at = all_headlines_list.get("publishedAt", "No Date")  # Extract the date
+    
+                # Format the date if it exists
+                if published_at != "No Date":
+                    # Parse the ISO 8601 date string
+                    date_obj = datetime.fromisoformat(published_at.replace("Z", "+00:00"))  # Handle 'Z' as UTC
+                    formatted_date = date_obj.strftime("%d-%m-%y %H:%M:%S")  # Format to your desired format
+                    st.write(f"Published at: {formatted_date}")
+                else:
+                    formatted_date = "No Date Available"
+
+
+                url_to_image = all_headlines_list.get("urlToImage")
+                if url_to_image:  # Check if the image URL exists and is not None
+                    st.image(url_to_image, caption="Image", use_column_width=True)
+
+
                 with st.expander("Click me to expand"):
                     st.write(f"Description: {all_headlines_list['description']}")
                 st.markdown("---")  # Horizontal separator between boxes
@@ -147,11 +202,37 @@ if st.button("Run"):
         if i < 10:
             all_headlines_list = tech_top_headlines["articles"][i]
             with st.container():
-                st.write(f"{i+1}. {all_headlines_list['title']} - {all_headlines_list['source']}")
+                st.write(f"{i+1}. {all_headlines_list['title']} - {all_headlines_list['source']['name']}")
+
+                #published date
+                published_at = all_headlines_list.get("publishedAt", "No Date")  # Extract the date
+    
+                # Format the date if it exists
+                if published_at != "No Date":
+                    # Parse the ISO 8601 date string
+                    date_obj = datetime.fromisoformat(published_at.replace("Z", "+00:00"))  # Handle 'Z' as UTC
+                    formatted_date = date_obj.strftime("%d-%m-%y %H:%M:%S")  # Format to your desired format
+                    st.write(f"Published at: {formatted_date}")
+                else:
+                    formatted_date = "No Date Available"
+
+
+                # Get the image URL if it exists
+                url_to_image = all_headlines_list.get("urlToImage")
+                if url_to_image:  # Check if the image URL exists and is not None
+                    st.image(url_to_image, caption="Image", use_column_width=True)
+
+                # Add an expander for the description
                 with st.expander("Click me to expand"):
-                    st.write(all_headlines_list['description'])
+                    st.write(all_headlines_list.get('description', 'No description available.'))
+
                 st.markdown("---")  # Horizontal separator between boxes
-        else: break
+        else:
+            break
+
+    
+
+
 
 
     #Tech news in india
@@ -201,6 +282,25 @@ if st.button("Run"):
         if idx < 6:
             st.write(f"{idx}. Title: {article['title']}")
             st.write(f"   Source: {article['source']['name']}")
+
+            #published date
+            published_at = article.get("publishedAt", "No Date")  # Extract the date
+    
+            # Format the date if it exists
+            if published_at != "No Date":
+                # Parse the ISO 8601 date string
+                date_obj = datetime.fromisoformat(published_at.replace("Z", "+00:00"))  # Handle 'Z' as UTC
+                formatted_date = date_obj.strftime("%d-%m-%y %H:%M:%S")  # Format to your desired format
+                st.write(f"Published at: {formatted_date}")
+            else:
+                formatted_date = "No Date Available"
+
+
+            # Get the image URL if it exists
+            url_to_image = article.get("urlToImage")
+            if url_to_image:  # Check if the image URL exists and is not None
+                st.image(url_to_image, caption="Image", use_column_width=True)
+
             with st.expander("Click me to expand"):
                 st.write(f" Description: {article["description"]}")
                 st.write(f"   URL: {article['url']}\n")
@@ -258,6 +358,26 @@ if st.button("Run"):
         if idx < 6:
             st.write(f"{idx}. Title: {article['title']}")
             st.write(f"   Source: {article['source']['name']}")
+
+            #published date
+            published_at = article.get("publishedAt", "No Date")  # Extract the date
+    
+            # Format the date if it exists
+            if published_at != "No Date":
+                # Parse the ISO 8601 date string
+                date_obj = datetime.fromisoformat(published_at.replace("Z", "+00:00"))  # Handle 'Z' as UTC
+                formatted_date = date_obj.strftime("%d-%m-%y %H:%M:%S")  # Format to your desired format
+                st.write(f"Published at: {formatted_date}")
+            else:
+                formatted_date = "No Date Available"
+
+
+             # Get the image URL if it exists
+            url_to_image = article.get("urlToImage")
+            if url_to_image:  # Check if the image URL exists and is not None
+                st.image(url_to_image, caption="Image", use_column_width=True)
+
+                
             with st.expander("Click me to expand"):
                 st.write(f" Description: {article["description"]}")
                 st.write(f"   URL: {article['url']}\n")
