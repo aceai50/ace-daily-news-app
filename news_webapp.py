@@ -54,10 +54,10 @@ if search:
                 else:
                     formatted_date = "No Date Available"
 
-
+                # Get the image URL if it exists
                 url_to_image = all_headlines_list.get("urlToImage")
                 if url_to_image:  # Check if the image URL exists and is not None
-                    st.image(url_to_image, caption="Image", use_column_width=True)
+                    st.image(url_to_image, caption="Image")
 
                 st.write(f"Description: {all_headlines_list['description']}")
                 st.markdown("---")  # Horizontal separator between boxes
@@ -115,10 +115,10 @@ if search_2:
                 else:
                     formatted_date = "No Date Available"
 
-
+                # Get the image URL if it exists
                 url_to_image = all_headlines_list.get("urlToImage")
                 if url_to_image:  # Check if the image URL exists and is not None
-                    st.image(url_to_image, caption="Image", use_column_width=True)
+                    st.image(url_to_image, caption="Image")
 
                 st.write(f"Description: {all_headlines_list['description']}")
                 st.markdown("---")  # Horizontal separator between boxes
@@ -166,7 +166,7 @@ if st.button("Run"):
                 else:
                     formatted_date = "No Date Available"
 
-
+                # Get the image URL if it exists
                 url_to_image = all_headlines_list.get("urlToImage")
                 if url_to_image:  # Check if the image URL exists and is not None
                     st.image(url_to_image, caption="Image")
@@ -220,7 +220,7 @@ if st.button("Run"):
                 # Get the image URL if it exists
                 url_to_image = all_headlines_list.get("urlToImage")
                 if url_to_image:  # Check if the image URL exists and is not None
-                    st.image(url_to_image, caption="Image", use_column_width=True)
+                    st.image(url_to_image, caption="Image")
 
                 # Add an expander for the description
                 with st.expander("Click me to expand"):
@@ -299,7 +299,7 @@ if st.button("Run"):
             # Get the image URL if it exists
             url_to_image = article.get("urlToImage")
             if url_to_image:  # Check if the image URL exists and is not None
-                st.image(url_to_image, caption="Image", use_column_width=True)
+                st.image(url_to_image, caption="Image")
 
             with st.expander("Click me to expand"):
                 st.write(f" Description: {article["description"]}")
@@ -375,7 +375,7 @@ if st.button("Run"):
              # Get the image URL if it exists
             url_to_image = article.get("urlToImage")
             if url_to_image:  # Check if the image URL exists and is not None
-                st.image(url_to_image, caption="Image", use_column_width=True)
+                st.image(url_to_image, caption="Image")
 
                 
             with st.expander("Click me to expand"):
