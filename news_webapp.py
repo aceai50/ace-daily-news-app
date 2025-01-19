@@ -169,7 +169,7 @@ if st.button("Run"):
 
                 url_to_image = all_headlines_list.get("urlToImage")
                 if url_to_image:  # Check if the image URL exists and is not None
-                    st.image(url_to_image, caption="Image", use_column_width=True)
+                    st.image(url_to_image, caption="Image")
 
 
                 with st.expander("Click me to expand"):
